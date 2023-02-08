@@ -113,7 +113,8 @@ def products():
     )
 
     if response.status_code != 200:
-        return 'There was an error', response.status_code
+        #return 'There was an error', response.status_code
+        response.status
     return render_template(
         'results.html',
         endpoint='products',
@@ -137,10 +138,11 @@ def time():
         url,
         headers=generate_ride_headers(session.get('access_token')),
         params=params,
+        
     )
 
     if response.status_code != 200:
-        return 'There was an error', response.status_code
+        return 'There was an error', response.access_token
     return render_template(
         'results.html',
         endpoint='time',
